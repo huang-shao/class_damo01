@@ -5,3 +5,9 @@ type Person struct {
 	Age string
 	Sex string
 }
+type PersonTwo struct {
+	Name string
+	Birthday string
+	Address string
+	Nick string
+}

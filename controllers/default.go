@@ -43,7 +43,7 @@ func(c *MainController)Delete(){
 
 }
 func (c *MainController)Post()  {
-	var person models.Person
+	var person models.PersonTwo
 	dateBytes,err:=ioutil.ReadAll(c.Ctx.Request.Body)
 	if err!=nil {
 		c.Ctx.WriteString("数据接收错误！")
@@ -55,7 +55,8 @@ func (c *MainController)Post()  {
 		return
 	}
 	fmt.Println("姓名:",person.Name)
-	fmt.Println("年龄:",person.Age)
-	fmt.Println("性别：",person.Sex)
+	fmt.Println("生日:",person.Birthday)
+	fmt.Println("地址：",person.Address)
+	fmt.Println("昵称：",person.Nick)
 	c.Ctx.WriteString("数据解析成功")
 }
