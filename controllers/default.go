@@ -1,11 +1,7 @@
 package controllers
 
 import (
-	"beego_damo02/models"
-	"encoding/json"
-	"fmt"
 	"github.com/astaxie/beego"
-	"io/ioutil"
 )
 
 type MainController struct {
@@ -42,21 +38,21 @@ func(c *MainController)Delete(){
 
 
 }
-func (c *MainController)Post()  {
-	var person models.PersonTwo
-	dateBytes,err:=ioutil.ReadAll(c.Ctx.Request.Body)
-	if err!=nil {
-		c.Ctx.WriteString("数据接收错误！")
-		return
-	}
-	err=json.Unmarshal(dateBytes,&person)
-	if err!=nil{
-		c.Ctx.WriteString("数据解析错误")
-		return
-	}
-	fmt.Println("姓名:",person.Name)
-	fmt.Println("生日:",person.Birthday)
-	fmt.Println("地址：",person.Address)
-	fmt.Println("昵称：",person.Nick)
-	c.Ctx.WriteString("数据解析成功")
-}
+//func (c *MainController)Post()  {
+//	var person models.PersonTwo
+//	dateBytes,err:=ioutil.ReadAll(c.Ctx.Request.Body)
+//	if err!=nil {
+//		c.Ctx.WriteString("数据接收错误！")
+//		return
+//	}
+//	err=json.Unmarshal(dateBytes,&person)
+//	if err!=nil{
+//		c.Ctx.WriteString("数据解析错误")
+//		return
+//	}
+//	fmt.Println("姓名:",person.Name)
+//	fmt.Println("生日:",person.Birthday)
+//	fmt.Println("地址：",person.Address)
+//	fmt.Println("昵称：",person.Nick)
+//	c.Ctx.WriteString("数据解析成功")
+//}
